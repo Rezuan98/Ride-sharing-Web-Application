@@ -1,0 +1,219 @@
+.registration1{
+    width: 400px;
+    height: 150px;
+    background: #6a5acd;
+    margin: 50px;
+    border-radius: 13px;
+    box-shadow: 5px 10px #888888;
+    border: none;
+    
+ 
+}
+.registration1:hover {
+    background-color: #888888;
+}
+.registration1 a{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    text-decoration: none;}
+  
+
+    .registration2{
+        width: 400px;
+        height: 150px;
+        background: #ddcb40;
+        margin: 50px;
+        border-radius: 13px;
+        box-shadow: 5px 10px #888888;
+        border: none;
+        
+     
+    }
+    .registration2:hover {
+        background-color: #48768d;
+    }
+    .registration2 a{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        text-decoration: none;}
+
+
+        /* registration of drivers start */
+
+        .dri_register{
+            width: 650px;
+            height: 1000px;
+           
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 13px;
+        }
+        .dri_register input{
+
+            margin-top: 10px;
+
+        }
+        .dri_register h3{
+            
+            text-align: center;
+        }
+
+
+        /* registration of drivers end */
+
+      
+        /*for select destinaiton  */
+
+        div.searchable {
+            width: 300px;
+            float: left;
+            margin: 0 15px;
+        }
+        
+        .searchable input {
+            width: 100%;
+            height: 50px;
+            font-size: 18px;
+            padding: 10px;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+            display: block;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center/8px 10px;
+        }
+        
+        .searchable ul {
+            display: none;
+            list-style-type: none;
+            background-color: #fff;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid #add8e6;
+            border-top: none;
+            max-height: 180px;
+            margin: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 0;
+        }
+        
+        .searchable ul li {
+            padding: 7px 9px;
+            border-bottom: 1px solid #e1e1e1;
+            cursor: pointer;
+            color: #6e6e6e;
+        }
+        
+        .searchable ul li.selected {
+            background-color: #e8e8e8;
+            color: #333;
+        }
+
+
+        /* banner css start */
+        .banner {
+            position: relative;
+            opacity: 1;
+          }
+          
+          .banner-content {
+            position: absolute;
+            top: 22%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+          }
+          
+          .banner-content h1 {
+            font-size: 50px;
+          }
+          
+          .banner-content h2 {
+            font-size: 24px;
+          }
+          
+          .banner-content .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Change color as needed */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 28px;
+          }
+          
+          
+          .search-row {
+            display: flex;
+            align-items: center; /* Align elements vertically */
+          }
+        
+          .searchable, .date-field {
+            flex: 1; /* Distribute remaining space equally */
+            margin-right: 10px; /* Add spacing between elements */
+          }
+        
+          .date-field {
+            width: auto; /* Adjust width as needed */
+          }
+
+
+
+          /* css codes for no available seat page  */
+
+        
+    /* .container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .custom-card {
+        width: 400px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .custom-card .card-title {
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .custom-card .card-text {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .custom-card .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .custom-card .btn:hover {
+        background-color: #0056b3;
+    } */
+
