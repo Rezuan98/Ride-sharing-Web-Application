@@ -47,6 +47,34 @@
                     </div>
                 </div>
                 <ul class="list-unstyled p-1">
+
+                  <@php
+                     if(Illuminate\Support\Facades\Auth::user()-> role === 'user'){
+                     @endphp
+                        <li class="dropdown-item py-2">
+                        <a href="{{route('bookings')}}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="edit"></i>
+                            <span class="text-white">Your Booked Rides</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item py-2">
+                        <a href="{{route('bookings')}}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="edit"></i>
+                            <span class="text-white">Edit Your Profile</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-item py-2">
+                        <a href="{{route('logout')}}" class="text-body ms-0">
+                            <i class="me-2 icon-md" data-feather="log-out"></i>
+                            <span class="text-white">Log Out</span>
+                        </a>
+                    </li>
+                       @php
+                }
+                       
+                   elseif(Illuminate\Support\Facades\Auth::user()-> role === 'rider'){
+                    @endphp
+
                     <li class="dropdown-item py-2">
                         <a href="{{route('bookings')}}" class="text-body ms-0">
                             <i class="me-2 icon-md" data-feather="edit"></i>
@@ -71,6 +99,16 @@
                             <span class="text-white">Log Out</span>
                         </a>
                     </li>
+                    @php
+                        
+                      
+                   }
+                   
+                   
+                   
+                  @endphp
+                    
+                   
                 </ul>
             </div>
         </li>
