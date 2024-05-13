@@ -32,15 +32,38 @@
             @php 
                 $user = Auth::user();
             @endphp
+           
          <li class="nav-item dropdown dropdown-profile">
-            <a class="nav-link dropdown-toggle me-4" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          
+                
+           
+              
+                <a class="nav-link dropdown-toggle me-4" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img style="height: 50px; width: 50px; border:5px solid white;" class="rounded-circle" src="{{  asset('images/userimages/' . $user->image) }}" alt="profile">
             </a>
+
+           
+           
+           
+                
+            
+       
+
+            
+           
             <div class="dropdown-menu dropdown-menu-end p-0" style="background-color: rgb(21, 21, 53);" aria-labelledby="profileDropdown">
                 <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                     <div class="mb-3">
+                     
+                   
                         <img style="height: 50px; width: 50px;" class="rounded-circle" src="{{ asset('images/userimages/' .$user->image) }}" alt="profile">
-                    </div>
+                   
+                       
+                     
+                  
+                    
+                    
+                        </div>
                     <div class="text-center">
                         <p class="tx-16 fw-bolder text-white">{{$user->name}}</p>
                         <p class="tx-12  text-white">{{$user->email}}</p>
@@ -48,9 +71,9 @@
                 </div>
                 <ul class="list-unstyled p-1">
 
-                  <@php
-                     if(Illuminate\Support\Facades\Auth::user()-> role === 'user'){
-                     @endphp
+                
+                     @if(Illuminate\Support\Facades\Auth::user()-> role === 'user')
+                     
                         <li class="dropdown-item py-2">
                         <a href="{{route('bookings')}}" class="text-body ms-0">
                             <i class="me-2 icon-md" data-feather="edit"></i>
@@ -69,11 +92,11 @@
                             <span class="text-white">Log Out</span>
                         </a>
                     </li>
-                       @php
-                }
+                      
+                
                        
-                   elseif(Illuminate\Support\Facades\Auth::user()-> role === 'rider'){
-                    @endphp
+                   @elseif(Illuminate\Support\Facades\Auth::user()-> role === 'rider')
+                    
 
                     <li class="dropdown-item py-2">
                         <a href="{{route('bookings')}}" class="text-body ms-0">
@@ -99,14 +122,14 @@
                             <span class="text-white">Log Out</span>
                         </a>
                     </li>
-                    @php
+                    
                         
                       
-                   }
+                   @endif
                    
                    
                    
-                  @endphp
+                 
                     
                    
                 </ul>

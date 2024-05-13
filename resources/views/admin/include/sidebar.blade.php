@@ -1,6 +1,6 @@
 <nav class="sidebar">
     <div class="sidebar-header">
-      <a class="sidebar-brand text-white ms-0" href="{{route('landing')}}"> <img style="width: 100px;" class="logo" src="{{asset('images/logo/hei40.png')}}" alt=""></a>
+      <a class="sidebar-brand text-white ms-0" href="{{route('admin.dashboard')}}"> <img style="width: 100px;" class="logo" src="{{asset('images/logo/hei40.png')}}" alt=""></a>
       <div class="sidebar-toggler not-active">
         <span></span>
         <span></span>
@@ -16,23 +16,23 @@
             <span class="link-title">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item nav-category">RealEstate</li>
+       <li class="nav-item nav-category">GoRide Controll</li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
             <i class="link-icon" data-feather="mail"></i>
-            <span class="link-title">Property Type</span>
+            <span class="link-title">Users</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="emails">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="#" class="nav-link">All Property</a>
+                <a href="{{route('all.riders')}}" class="nav-link">Rider's</a>
               </li>
               <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Special Properties</a>
+                <a href="{{route('all.users')}}" class="nav-link">Passengers</a>
               </li>
               <li class="nav-item">
-                <a href="pages/email/compose.html" class="nav-link">Add property</a>
+                <a href="#" class="nav-link">Admins</a>
               </li>
             </ul>
           </div>
@@ -40,19 +40,19 @@
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#amenities" role="button" aria-expanded="false" aria-controls="emails">
             <i class="link-icon" data-feather="mail"></i>
-            <span class="link-title">Amenitie Type</span>
+            <span class="link-title">All Rides</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="amenities">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="#" class="nav-link">All Amenities</a>
+                <a href="{{route('pending.rides')}}" class="nav-link">Pending Ride's</a>
               </li>
               <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Special Amenities</a>
+                <a href="{{route('posted.rides')}}" class="nav-link">Posted Ride's</a>
               </li>
               <li class="nav-item">
-                <a href="pages/email/compose.html" class="nav-link">Add Amenities</a>
+                <a href="#" class="nav-link">Completed Rides</a>
               </li>
             </ul>
           </div>
@@ -60,7 +60,7 @@
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#property" role="button" aria-expanded="false" aria-controls="emails">
             <i class="link-icon" data-feather="mail"></i>
-            <span class="link-title">Property</span>
+            <span class="link-title">All Bookings</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="property">
@@ -78,27 +78,23 @@
           </div>
         </li>
         
-        <li class="nav-item">
-          <a href="pages/apps/calendar.html" class="nav-link">
-            <i class="link-icon" data-feather="calendar"></i>
-            <span class="link-title">Calendar</span>
-          </a>
-        </li>
-        <li class="nav-item nav-category">User All Functions</li>
+       
+        <li class="nav-item nav-category">Contact</li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
             <i class="link-icon" data-feather="feather"></i>
-            <span class="link-title">Manage  Agents</span>
+            <span class="link-title">Messages</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="uiComponents">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="#" class="nav-link">All Agents</a>
+                <a href="#" class="nav-link">From Rider's</a>
               </li>
               <li class="nav-item">
-                <a href="pages/ui-components/alerts.html" class="nav-link">Add Agents</a>
+                <a href="#" class="nav-link">From User's</a>
               </li>
+             
              
               
             </ul>
@@ -109,31 +105,10 @@
         
        
         
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
-            <i class="link-icon" data-feather="unlock"></i>
-            <span class="link-title">Authentication</span>
-            <i class="link-arrow" data-feather="chevron-down"></i>
-          </a>
-          <div class="collapse" id="authPages">
-            <ul class="nav sub-menu">
-              <li class="nav-item">
-                <a href="pages/auth/login.html" class="nav-link">Login</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/auth/register.html" class="nav-link">Register</a>
-              </li>
-            </ul>
-          </div>
-        </li>
+      
         
-        <li class="nav-item nav-category">Docs</li>
-        <li class="nav-item">
-          <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
-            <i class="link-icon" data-feather="hash"></i>
-            <span class="link-title">Documentation</span>
-          </a>
-        </li>
+        <li class="nav-item nav-category">Work Schedules</li>
+       
       </ul>
     </div>
   </nav>

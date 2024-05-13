@@ -45,8 +45,8 @@ class RideController extends Controller
         $request->image->move(public_path('images/car_images'), $imageName);
 
          // Handle rider image upload
-         $imageName2 = time().'.'.$request->riderimage->extension();  
-         $request->riderimage->move(public_path('images/rider_images'), $imageName2);
+        //  $imageName2 = time().'.'.$request->riderimage->extension();  
+        //  $request->riderimage->move(public_path('images/rider_images'), $imageName2);
 
         // Get authenticated user's ID
         $user = Auth::user()->id;
@@ -57,7 +57,7 @@ class RideController extends Controller
             'rider_name' => $request->name,
             'city' => $request->city,
             'image' => $imageName,
-            'image2' => $imageName2,
+            // 'image2' => $imageName2,
             'from' => $request->from,
             'destination' => $request->to,
             'date' => $request->date,
@@ -81,21 +81,31 @@ class RideController extends Controller
     // start search ride methode 
 
     public function searchRide(Request $request)
-    {
-        $rides = Allride::where('from', $request->from)
-                ->where('destination', $request->to)
-                ->whereDate('date', $request->date)
-                ->with('user')
-                ->get();
+{
+    $from = $request->from;
+    $to = $request->to;
 
+    $rides = Allride::where('from', 'like', '%' . $from . '%')
+        ->where('destination', 'like', '%' . $to . '%')
+        ->whereDate('date', $request->date)
+        ->with('user')
+        ->get();
 
-          foreach($rides as $ride)     {
+    $still_available = []; // Initialize $still_available as an empty array
 
-          }  
-    $booking = Booking::where('',);
+    foreach ($rides as $item) {
+        $ride_id = $item->id;
 
-        return view('rides.search_results', compact('rides'));
+        $occupied = Booking::where('ride_id', $ride_id)->sum('booked_seats');
+        $total = Allride::where('id', $ride_id)->value('available_seat');
+        $still_available[] = $total - $occupied;
     }
+
+    return view('rides.search_results', compact('rides', 'still_available'));
+}
+
+
+    
     //  end search ride methode
 
 

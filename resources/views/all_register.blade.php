@@ -10,7 +10,7 @@
     <form action="{{url('/insertuser')}}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="text" name="name" id="" class="form-control" placeholder="Enter Your Name">
-        <input type="text" name="city" id="" class="form-control" placeholder="Enter Your city">
+        <input type="text" name="city" id="" class="form-control" placeholder="Enter Your Address">
         <input type="file" name="image" id="" class="form-control" >
         <input type="text" name="nid" id="" class="form-control" placeholder="Enter NID Number">
         <input type="text" name="phone" id="" class="form-control" placeholder="Enter Phone Number">

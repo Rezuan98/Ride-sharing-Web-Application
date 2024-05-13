@@ -33,17 +33,34 @@ class AuthenticatedSessionController extends Controller
         $url = '';
         if($request->user()-> role === 'admin'){
              $url = '/admin/dashboard';
+
+             $notification = array(
+                'message' => ' Admin logged in successfully',
+                'alert-type' => 'success'
+              );
+              return redirect()->intended($url)->with($notification);
+
         }elseif($request->user()-> role === 'rider'){
-             $url = '/rider/dashboard';
-        }elseif($request->user()-> role === 'user'){
              $url = '/';
+
+             $notification = array(
+                'message' => ' Rider logged in successfully',
+                'alert-type' => 'success'
+              );
+              return redirect()->intended($url)->with($notification);
+        }
+        
+        elseif($request->user()-> role === 'user'){
+             $url = '/';
+
+             $notification = array(
+                'message' => ' User logged in successfully',
+                'alert-type' => 'success'
+              );
+              return redirect()->intended($url)->with($notification);
         }
 
-        $notification = array(
-            'message' => ' logged in successfully',
-            'alert-type' => 'success'
-          );
-       return redirect()->intended($url)->with($notification);
+       
     }
 
     /**

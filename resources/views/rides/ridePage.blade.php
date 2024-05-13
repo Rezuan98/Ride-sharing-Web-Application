@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10">
-<a href="{{route('store.ride')}}"> <button class="btn btn-dark mt-4">Post a Ride</button></a>
+
         <div class="card border-dark m-4">
            
           <div class="card-body">
@@ -128,27 +128,39 @@
   
 
 
-  <div class="landscapebox">
-    <div class="con-md-6">
-        <h1 class="text-white text-center"><i class="fa-solid fa-hand-holding-hand"></i>   Help us keep you safe from scams</h1>
-    <p class="text-white">To keep yourself safe from scams, it's essential to stay vigilant and aware of potential threats. Verify the
-        legitimacy of offers, messages, or requests by using official sources or contacting the company directly through
-        their verified channels. When making online purchases or providing sensitive information, ensure that the
-        website is secure with HTTPS in the URL and a padlock icon in the address bar. Be cautious of phishing attempts,
-        which often involve unsolicited emails, messages, or calls asking for personal or financial information. Keep
-        your software updated to protect against security vulnerabilities, and use strong, unique passwords for your
-        accounts. Educate yourself about common scams and tactics used by scammers, and avoid sharing sensitive
-        information unless absolutely necessary and with trusted sources. </p>
+  <div class="container-fluid landscapebox">
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h1 class="text-white text-center"><i class="fa-solid fa-hand-holding-hand"></i> Help us keep you safe from
+                scams</h1>
+            <p class="text-white" style="margin-left:100px;">To keep yourself safe from scams, it's essential to stay vigilant and aware of potential
+                threats. Verify the
+                legitimacy of offers, messages, or requests by using official sources or contacting the company directly
+                through
+                their verified channels. When making online purchases or providing sensitive information, ensure that the
+                website is secure with HTTPS in the URL and a padlock icon in the address bar. Be cautious of phishing
+                 </p>
+                 <div class="insidebox2">
+                    <h3 class="text-white"><i class="fa-solid fa-people-arrows"></i> What you can do to avoid a scam</h3>
+                    <br>
+                    <h6 class="text-white"><i class="fa-solid fa-ban"></i> Never visit links sent by drivers</h6>
+                    <h6 class="text-white"><i class="fa-solid fa-brain"></i> Be aware of weird behaviour and requests</h6>
+                    <h6 class="text-white"><i class="fa-solid fa-phone"></i> Call Our Hotline at any weired situation</h6>
+                </div>
+
+        </div>
+       
+        <div class="col-md-4">
+            <img src="{{asset('images/pppp.png')}}" alt="" style="height: 350px;width:400px;">
+ 
+             </div>
 
     </div>
-    <div class="insidebox2">
-        <h3 class="text-white"><i class="fa-solid fa-people-arrows"></i>  What you can do to avoid a scam</h3>
-        <br>
-        <h6 class="text-white"><i class="fa-solid fa-ban"></i>  Never visit links sent by drivers</h6>
-        <h6 class="text-white"><i class="fa-solid fa-brain"></i>  Be aware of weird behaviour and requests</h6>
-        <h6 class="text-white"><i class="fa-solid fa-phone"></i>  Call Our Hotline at any weired situation</h6>
-    </div>
+   
 </div>
+
 
 
 

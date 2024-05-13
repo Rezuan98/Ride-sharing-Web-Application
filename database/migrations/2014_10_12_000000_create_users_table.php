@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('city');
             $table->string('image');
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
             $table->string('nid');
+            $table->string('car_model');
             $table->string('phone');
             $table->string('email')->unique();
             $table->enum('role',['admin','rider','user'])->default('user');
@@ -24,6 +28,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('confirm_code')->nullable();
             $table->timestamps();
         });
     }

@@ -61,6 +61,7 @@
                 <div class="card-header">
                     <h3 class="text-center">Your Rides</h3>
                 </div>
+                <a href="{{route('store.ride')}}"> <button class="btn btn-dark mt-4">Post a Ride</button></a>
                 <div class="card-body">
                     <!-- Ride booking details here -->
                     <!-- You can fetch and display ride booking details dynamically -->

@@ -41,7 +41,7 @@
                                 <td> <h5 class="card-title">{{ $item->rider_name }}</h5></td>
                               </tr>
                               <tr>
-                                <td><h4>Rider's City:</h4></td>
+                                <td><h4>Rider's Address:</h4></td>
                                 <td> <h5 class="card-title">{{ $item->city }}</h5></td>
                               </tr>
                               <tr>
@@ -94,7 +94,7 @@
                                       @csrf
                                       <div class="mb-3">
                                           <label for="seats">Number of Seats:</label>
-                                          <input type="number" value="{{ $item->available_seat }}" class="form-control" id="seats" name="seats" required>
+                                          <input type="number" value="{{ $still_available }}" class="form-control" id="seats" name="seats" required>
                                       </div>
                                       <input type="hidden" name="ride_id" value="{{ $item->id }}">
                                       <input type="hidden" name="rider_id" value="{{ $item->user_id }}">

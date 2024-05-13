@@ -22,8 +22,8 @@
             <input type="text" name="city" id="" class="form-control" placeholder="Enter Your city">
             <label for="image">Car Image:</label>
             <input type="file" name="image" id="" class="form-control" >
-            <label for="rider_image">Rider Image:</label>
-            <input type="file" name="riderimage" id="" class="form-control" >
+           
+          
             <br>
             <div class="searchable">
                 <input type="text" name="from" placeholder="From" onkeyup="filterFunction(this,event)">

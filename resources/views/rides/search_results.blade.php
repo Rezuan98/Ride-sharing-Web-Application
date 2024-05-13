@@ -13,18 +13,18 @@
                 <p>No rides found.</p>
             </div>
         @else
-            @foreach($rides as $ride)
+            @foreach($rides as $key => $ride)
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="{{ asset('images/rideimages/' . $ride->image) }}" class="card-img-top p-2" alt="Ride Image" style="max-height: 200px; object-fit: cover;">
+                        {{-- <img src="{{ asset('images/rideimages/' . $ride->image) }}" class="card-img-top p-2" alt="Ride Image" style="max-height: 200px; object-fit: cover;"> --}}
                         <div class="card-body">
-                            <h5 class="card-title">{{ $ride->rider_name }}</h5>
+                            <h5 class="card-title">Rider Name: {{ $ride->rider_name }}</h5>
                             <p class="card-text"><strong>Rider's City:</strong> {{ $ride->city }}</p>
                             {{-- <p class="card-text"><strong>Phone:</strong> {{ $ride->phone }}</p> --}}
                             <p class="card-text"><strong>From:</strong> {{ $ride->from }}</p>
                             <p class="card-text"><strong>To:</strong> {{ $ride->destination }}</p>
                             <p class="card-text"><strong>Date:</strong> {{ $ride->date }}</p>
-                            {{-- <p class="card-text"><strong>Available Seats:</strong> {{ $ride->available_seat }}</p> --}}
+                            <p class="card-text"><strong>Available Seats:</strong> {{ isset($still_available[$key]) ? $still_available[$key] : 'N/A' }}</p>
                             {{-- <p class="card-text"><strong>Pick-Up Point:</strong> {{ $ride->pick_up_point }}</p> --}}
                             <a href="{{route('ride.details', $ride->id)}}" ><p class="btn btn-dark"><strong>More Details:</strong></p></a>
                             <!-- Add more details as needed -->

@@ -13,7 +13,7 @@
     <div class="row ">
         <div class="col-lg-6">
 
-            <button class="registration2"><a href="{{route('passenger_register')}}">Register as a passenger</a></button>
+            <button class="registration2"><a href="{{route('passenger_register')}}">Register as a User</a></button>
             
             
            

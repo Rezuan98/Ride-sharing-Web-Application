@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use App\Mail\RegisterMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+
 
 class LandingController extends Controller
 {
@@ -55,11 +59,19 @@ class LandingController extends Controller
         $user->nid = $request->nid;
         $user->phone = $request->phone;
         $user->email = $request->email;
+        $user->remember_token = Str::random(40);
         $user->password = bcrypt($request->password); // Encrypt the password
         $user->save();
 
-        // Redirect back or to a success page
-        return redirect()->back();
+        $email = $request->email;
+
+    
+
+        
+
+        
+        return redirect()->route('welcome.email', ['email' => $email]);
+
 
         
     }
@@ -92,5 +104,77 @@ public function riderDashboard(){
 
 
     return view('rider.rider_dashboard');
+}
+
+// register of rider 
+public function insertRider(Request $request){
+
+    if ($request->hasFile('rider_image')) {
+        $rider_image = $request->file('rider_image');
+        $imageName1 = time().'.'.$rider_image->extension();
+        $rider_image->move(public_path('images/userimages'), $imageName1);
+    } else {
+        $imageName1 = null; // Set a default image name or handle missing image case
+    }
+
+    if ($request->hasFile('car_image')) {
+        $car_image = $request->file('car_image');
+        $imageName2 = time().'.'.$car_image->extension();
+        $car_image->move(public_path('images/carimages'), $imageName2);
+    } else {
+        $imageName2 = null; // Set a default image name or handle missing image case
+    }
+
+    if ($request->hasFile('nid_front_image')) {
+        $nid_front_image = $request->file('nid_front_image');
+        $imageName3 = time().'.'.$nid_front_image->extension();
+        $nid_front_image->move(public_path('images/nidfrontimages'), $imageName3);
+    } else {
+        $imageName3 = null; // Set a default image name or handle missing image case
+    }
+
+    if ($request->hasFile('nid_back_image')) {
+        $nid_back_image = $request->file('nid_back_image');
+        $imageName4 = time().'.'.$nid_back_image->extension();
+        $nid_back_image->move(public_path('images/nidbackimages'), $imageName4);
+    } else {
+        $imageName4 = null; // Set a default image name or handle missing image case
+    }
+
+    $user = new User();
+    $user->name = $request->name;
+    $user->city = $request->address;
+    $user->image = $imageName1;
+    $user->image2 = $imageName2;
+    $user->image3 = $imageName3;
+    $user->image4 = $imageName4;
+    $user->nid = $request->nid;
+    $user->role = "rider";
+    $user->driving_licence_number = $request->driving_licence_number;
+    $user->phone = $request->phone;
+    $user->car_model = $request->car_model;
+    $user->email = $request->email;
+    $user->password = bcrypt($request->password); // Encrypt the password
+    $user->save();
+
+
+
+    // Redirect back or to a success page
+
+    $notification = array(
+        'message' => ' Rider Registered successfully',
+        'alert-type' => 'info'
+      );
+   
+    $email = $request->email;
+
+    
+
+        
+
+        
+        return redirect()->route('welcome.email', ['email' => $email])->with($notification);
+
+
 }
 }
