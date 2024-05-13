@@ -13,7 +13,7 @@
         <div class="banner-content">
             <h1 style="color: rgb(252, 179, 43);text-shadow: 2px 2px 2px rgba(10, 9, 9, 0.5); ">Welcome To Goride</h1>
             <h2>We Provide Safe and Cost Friendly Travel Facility around 64 districts <span>in</span> Bangladesh</h2>
-            <a href="#" class="btn btn-warning fw-bold ">Start Now</a>
+        <a href="{{route('login')}}" class="btn btn-warning fw-bold ">Start Now</a>
         </div>
     </div>
     {{-- banner ends --}}

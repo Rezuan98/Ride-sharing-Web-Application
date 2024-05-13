@@ -12,6 +12,17 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function bookingsAsPassenger()
+    {
+        return $this->hasMany(Booking::class, 'passenger_id');
+    }
+
+    // Define the inverse of the mydata relationship
+    public function bookingsAsRider()
+    {
+        return $this->hasMany(Booking::class, 'rider_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

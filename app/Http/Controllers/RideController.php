@@ -70,9 +70,12 @@ class RideController extends Controller
             'updated_at' => now(),
         ]);
 
-
+        $notification = array(
+            'message' => ' Your Booking Successfully Done',
+            'alert-type' => 'info'
+          );
         // Redirect the user after successfully storing the data
-        return redirect()->back()->with('success', 'Ride posted successfully!');
+        return redirect()->route('landing')->with($notification);
     }     
     
     //    end store ride methode

@@ -5,7 +5,7 @@
 @section('maincontent')
 <div class="container-fluid">
     <div class="row">
-       
+        
 <!-- Left Sidebar -->
 <div class="col-md-3 p-0 ">
     <div class="card">
@@ -27,7 +27,7 @@
             </div>
             <!-- Add more user data fields as needed -->
             <!-- Logout button -->
-            <form action="{{ route('logout') }}" method="POST">
+            <form action="{{ route('logout') }}" method="get">
                 @csrf
                 <button type="submit" class="btn  mb-3 text-white " style="background-color:orange ; margin:2px; padding:5px;">Logout</button>
             </form>
@@ -58,7 +58,9 @@
         <!-- Main Body -->
         <div class="col-md-9 mt-4 " style="background-color: rgb(240, 245,250)">
             <div class="card">
+                @if(Illuminate\Support\Facades\Auth::user()-> role === 'rider')
                 <div class="card-header">
+                   
                     <h3 class="text-center">Your Rides</h3>
                 </div>
                 <a href="{{route('store.ride')}}"> <button class="btn btn-dark mt-4">Post a Ride</button></a>
@@ -66,8 +68,10 @@
                     <!-- Ride booking details here -->
                     <!-- You can fetch and display ride booking details dynamically -->
                     <div class="table-responsive">
+                       
                         <table class="table">
                             <thead>
+                               
                                 <tr>
                                     <th>SL</th>
                                     <th>Ride Date</th>
@@ -79,6 +83,8 @@
                             </thead>
                             <tbody>
                                 <!-- Iterate over ride booking details and display them in rows -->
+                               
+
                                 @foreach($booking as $key => $item) 
                                 <tr>   <td>{{ $key + 1 }}</td>
                                      <td>{{ $item->date }}</td>
@@ -94,8 +100,57 @@
                                     <!-- Add more table cells for other details -->
                                 </tr>
                                 @endforeach 
+                               
                             </tbody>
                         </table>
+                        
+                           
+                        @elseif(Illuminate\Support\Facades\Auth::user()-> role === 'user')
+                        <div class="card-header">
+                            <div class="card-header">
+                                <h3 class="text-center">Rides You Booked</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>SL</th>
+                                            <th>Ride Date</th>
+                                            <th>From</th>
+                                            <th>Destination</th>
+                                            <th>Rider Name</th>
+                                            <th>Rider Mobile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data as $key => $mydata) 
+                                            <tr>   
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ $mydata->allride->date }}</td>
+                                                <td>{{ $mydata->allride->from }}</td>
+                                                <td>{{ $mydata->allride->destination }}</td>
+                                                <td>{{ $mydata->mydata->name }}</td>
+                                                <td>{{ $mydata->mydata->phone }}</td>
+                                            </tr>
+                                        @endforeach 
+                                    </tbody>
+                                    @endif
+                                </table>
+                            </div>
+                        </div>
+                        
+          
+
+    </div>
+
+
+</div>
+                        
+                        
+                       
                     </div>
                 </div>
             </div>
@@ -103,7 +158,7 @@
     </div>
 </div>
 
-<div class="container-fluid landscapebox">
+<div class="container-fluid landscapebox" style="background-color:rgb(21, 21, 53);">
 
     <div class="row">
 
@@ -134,5 +189,23 @@
 
     </div>
    
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Get 30% Festival Goride Bonus From Booking 5 seat Once</h2>
+            <p>Unlock a 30% Festival GoRide Bonus in bangla Nobo Borsho by booking five seats at once! Celebrate the joy of travel with
+                friends and family while enjoying exclusive savings. Whether it's a festive getaway or a group
+                adventure, GoRide rewards your group bookings with unparalleled discounts. Experience the thrill of
+                exploring new destinations together without worrying about the cost. With GoRide, every journey becomes
+                a memorable experience filled with laughter and shared moments. Don't miss out on this limited-time
+                offer! Book your five seats now and indulge in the Festival GoRide Bonus. Start planning your next
+                adventure today with GoRide.</p>
+        </div>
+        <div class="col-md-6">
+       <img src="{{asset('images/tour.png')}}" alt="">
+
+        </div>
+    </div>
 </div>
 @endsection

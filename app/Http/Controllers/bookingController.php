@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Allride;
 use App\Models\Booking;
 use illuminate\Support\Facades\Auth;
+use illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
@@ -51,9 +52,14 @@ class bookingController extends Controller
 
         ]);
         
+
+        $notification = array(
+          'message' => ' Your Booking Successfully Done',
+          'alert-type' => 'info'
+        );
     
         // Optionally, return a response
-        return redirect()->route('landing');
+        return redirect()->route('landing')->with($notification);
 
       }
       else{
@@ -72,7 +78,37 @@ class bookingController extends Controller
 
         $booking = Allride::where('user_id',$id)->get();
 
+  
+       
 
+// passing data for user what ride he booked
+
+if(Auth::user()->role === 'user'){
+
+  $id = Auth::user()->id;
+
+  $data = Booking::where('passenger_id',$id)
+                    ->with('Allride','mydata')->get();
+
+     
+  return view('rides.booking',compact('data'));
+}
+
+
+
+
+
+
+
+
+                              
+    
+      
+
+                                  
+                                 
+        
+                                  
         return view('rides.booking',compact('booking'));
     }
 
